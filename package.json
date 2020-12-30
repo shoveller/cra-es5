@@ -2,6 +2,7 @@
   "name": "cra-es5",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://shoveller.github.io/cra-es5/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -17,7 +18,9 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "postinstall": "sh -c \"are-you-es5 check -r . | tail > ./non_ES5_node_modules \""
+    "postinstall": "sh -c \"are-you-es5 check -r . | tail > ./non_ES5_node_modules \"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -27,14 +30,14 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "ie 9",
+      "ie 10",
+      "ie 11"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "ie 9",
+      "ie 10",
+      "ie 11"
     ]
   },
   "devDependencies": {
